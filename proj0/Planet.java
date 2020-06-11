@@ -49,6 +49,15 @@ x	*/
 	}
 
 	/**
+    Calculates the force exerted on this Planet by the given Planet
+    */
+    public double calcForceExertedBy(Planet p) {
+        double r = calcDistance(p);
+        double F =  G * mass * p.mass / (r * r);
+        return F;
+    }
+
+	/**
 	Total force in x direction
 	*/
     public double calcForceExertedByX(Planet p)
