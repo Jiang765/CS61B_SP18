@@ -122,8 +122,8 @@ public class IntList {
      * If given null as an input, returns null.
      */
     public static IntList reverse(IntList A) {
-        if (A == null) {
-            return null;
+        if (A == null || A.rest == null) {
+            return A;
         }
 
 // Incorrect because it should be deconstructive
@@ -137,14 +137,10 @@ public class IntList {
 //            ptr = ptr.rest;
 //        }
 
-        IntList res = new IntList(A.first, null);
-        A = A.rest;
-
-        while (A != null) {
-            res = new IntList(A.first, res);
-            A = A.rest;
-        }
-        return res;
+        IntList reversed = reverse(A.rest);
+        A.rest.rest = A;
+        A.rest = null;
+        return reversed;
     }
 
 
