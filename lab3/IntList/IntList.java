@@ -126,14 +126,23 @@ public class IntList {
             return null;
         }
 
-        IntList ptr = A;
-        IntList res = new IntList(A.first, null);
-        ptr = ptr.rest;
+// Incorrect because it should be deconstructive
+//        IntList ptr = A;
+//        IntList res = new IntList(A.first, null);
+//        ptr = ptr.rest;
+//
+//        while (ptr != null) {
+//            IntList temp = new IntList(ptr.first, res);
+//            res = temp;
+//            ptr = ptr.rest;
+//        }
 
-        while (ptr != null) {
-            IntList temp = new IntList(ptr.first, res);
-            res = temp;
-            ptr = ptr.rest;
+        IntList res = new IntList(A.first, null);
+        A = A.rest;
+
+        while (A != null) {
+            res = new IntList(A.first, res);
+            A = A.rest;
         }
         return res;
     }
