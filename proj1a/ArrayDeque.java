@@ -39,8 +39,12 @@ public class ArrayDeque<T> {
         return arraySize;
     }
 
+    /**
+    Print the items in the deque from first to last, separated by a space.
+    Once all the items have been printed, print out a new line.
+    */
     public void printDeque() {
-        for (int i = 0; i < items.length; i++) {
+        for (int i = plusOne(nextFirst + 1); i != minusOne(nextLast) ; i = plusOne(i + 1)) {
             System.out.print(items[i] + " ");
         }
         System.out.println();
