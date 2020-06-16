@@ -21,17 +21,17 @@ public class LinkedListDeque<T> {
         private Node prev;
         private Node next;
 
-        public Node(T i, Node p, Node n) {
+        Node(T i, Node p, Node n) {
             this.item = i;
             this.prev = p;
             this.next = n;
         }
 
-        public Node(T i) {
+        Node(T i) {
             this(i, null, null);
         }
 
-        public Node() {
+        Node() {
             this(null, null, null);
         }
     }
