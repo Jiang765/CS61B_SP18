@@ -125,6 +125,10 @@ public class IntList {
         if (A == null || A.rest == null) {
             return A;
         }
+        IntList reversed = reverse(A.rest);
+        A.rest.rest = A;
+        A.rest = null;
+        return reversed;
 
 // Incorrect because it should be deconstructive
 //        IntList ptr = A;
@@ -136,11 +140,6 @@ public class IntList {
 //            res = temp;
 //            ptr = ptr.rest;
 //        }
-
-        IntList reversed = reverse(A.rest);
-        A.rest.rest = A;
-        A.rest = null;
-        return reversed;
     }
 
 
