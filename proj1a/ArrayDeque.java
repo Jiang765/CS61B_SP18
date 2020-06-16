@@ -27,7 +27,7 @@ public class ArrayDeque<T> {
         nextLast = 1;
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return arraySize == 0;
     }
 
