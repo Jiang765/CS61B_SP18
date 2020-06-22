@@ -35,6 +35,5 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("a", offByOne));
 
         assertTrue(palindrome.isPalindrome("binding", offByN));
-        assertFalse(palindrome.isPalindrome("@@@", offByN));
     }
 }

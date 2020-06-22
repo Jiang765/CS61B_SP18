@@ -19,8 +19,7 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word) {
-        Deque<Character> deque = new LinkedListDeque<>();
-        deque = wordToDeque(word);
+        Deque<Character> deque = wordToDeque(word);
         return recursionHelper1(deque);
     }
 
@@ -38,8 +37,7 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word, CharacterComparator cc) {
-        Deque<Character> deque = new LinkedListDeque<>();
-        deque = wordToDeque(word);
+        Deque<Character> deque = wordToDeque(word);
         return recursionHelper2(deque, cc);
     }
 }
