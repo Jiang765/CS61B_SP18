@@ -1,7 +1,6 @@
 public class Palindrome {
-    Deque<Character> deque = new LinkedListDeque<>();
-
     public Deque<Character> wordToDeque(String word) {
+        Deque<Character> deque = new LinkedListDeque<>();
         for (int i = 0; i < word.length(); i++) {
             deque.addLast(word.charAt(i));
         }
@@ -11,7 +10,7 @@ public class Palindrome {
     /**
     Decide if a deque is palindrome
     */
-    private boolean recursionHelper1(Deque deque) {
+    private boolean recursionHelper1(Deque<Character> deque) {
         if (deque.size() == 0 || deque.size() == 1) {
             return true;
         } else {
@@ -20,15 +19,16 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word) {
+        Deque<Character> deque = new LinkedListDeque<>();
         deque = wordToDeque(word);
         return recursionHelper1(deque);
     }
 
-    private boolean recursionHelper2(Deque deque, CharacterComparator cc) {
-        if (deque.size() == 0) {
-            return true;
-        } else if (deque.size() == 1) {
-            deque.removeFirst();
+    /**
+     Decide if a deque is palindrome
+    */
+    private boolean recursionHelper2(Deque<Character> deque, CharacterComparator cc) {
+        if (deque.size() == 0 || deque.size() == 1) {
             return true;
         } else {
             Character c1 = (Character) deque.removeFirst();
@@ -38,6 +38,7 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> deque = new LinkedListDeque<>();
         deque = wordToDeque(word);
         return recursionHelper2(deque, cc);
     }
