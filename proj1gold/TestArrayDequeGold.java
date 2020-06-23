@@ -14,8 +14,8 @@ public class TestArrayDequeGold {
         ArrayDequeSolution<Integer> ads = new ArrayDequeSolution<>();
         String message = "";
 
-        for (int i = 0; i < 1000; i += 1) {
-            int number = StdRandom.uniform(1000);
+        for (int i = 0; i < 100; i += 1) {
+            int number = StdRandom.uniform(100);
             sad.addLast(number);
             ads.addLast(number);
             message += "addLast(" + number + ")\n";
@@ -23,22 +23,22 @@ public class TestArrayDequeGold {
 
         }
 
-        for (int i = 0; i < 1000; i += 1) {
-            int number = StdRandom.uniform(1000);
+        for (int i = 0; i < 100; i += 1) {
+            int number = StdRandom.uniform(100);
             sad.addFirst(number);
             ads.addFirst(number);
             message += "addFirst(" + number + ")\n";
             assertEquals(message, ads.get(0), sad.get(0));
         }
 
-        for (int i = 0; i < 1000; i += 1) {
+        for (int i = 0; i < 100; i += 1) {
             Integer r1 = ads.removeFirst();
             Integer r2 = sad.removeFirst();
             message += "removeLast()\n";
             assertEquals(message, r1, r2);
         }
 
-        for (int i = 0; i < 1000; i += 1) {
+        for (int i = 0; i < 100; i += 1) {
             Integer r1 = ads.removeLast();
             Integer r2 = sad.removeLast();
             message += "removeFirst()\n";
