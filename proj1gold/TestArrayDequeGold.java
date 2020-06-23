@@ -18,7 +18,8 @@ public class TestArrayDequeGold {
             sad.addLast(number);
             ads.addLast(number);
             for (int j = 0; j < ads.size() - 1; j++) {
-                assertEquals("addLast is incorrect！", ads.get(j), sad.get(j));
+                assertEquals("addLast is incorrect！Expected: " + ads.get(j)
+                        + " Actual: " + sad.get(j), ads.get(j), sad.get(j));
             }
         }
 
@@ -27,16 +28,21 @@ public class TestArrayDequeGold {
             sad.addFirst(number);
             ads.addFirst(number);
             for (int j = 0; j < ads.size() - 1; j++) {
-                assertEquals("addFirst is incorrect！", ads.get(j), sad.get(j));
+                assertEquals("addFirst is incorrect！Expected: " + ads.get(j)
+                        + " Actual: " + sad.get(j), ads.get(j), sad.get(j));
             }
         }
 
         for (int i = 0; i < 1000; i += 1) {
-            assertEquals("removeFirst is incorrect！", ads.removeFirst(), sad.removeFirst());
+            Integer r1 = ads.removeFirst();
+            Integer r2 = sad.removeFirst();
+            assertEquals("removeFirst is incorrect！Expected: " + r1 + " Actual: " + r2, r1, r2);
         }
 
         for (int i = 0; i < 1000; i += 1) {
-            assertEquals("removeLast is incorrect！", ads.removeLast(), sad.removeLast());
+            Integer r1 = ads.removeLast();
+            Integer r2 = sad.removeLast();
+            assertEquals("removeLast is incorrect！Expected: " + r1 + " Actual: " + r2, r1, r2);
         }
     }
 }
